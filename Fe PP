@@ -1,0 +1,35 @@
+_G.loop = true
+while _G.loop do
+
+local args = {
+    [1] = "I am gay",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+local args = {
+    [1] = "and i have no pen",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+
+local args = {
+    [1] = "is",
+    [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(5)
+end
+
+_G.loop = true
+while _G.loop do
+	for i, player in pairs(loopkillPlayers) do
+		local char = game.Workspace:FindFirstChild(player)
+		if char:FindFirstChild("Humanoid").Health > 0 then
+			char:FindFirstChild("Humanoid").Health = 0
+		end
+	end
+end
